@@ -1,0 +1,41 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #0d1117; // matches $bg-page
+  border-bottom: 1px solid #2a3348; // matches $border-color
+  z-index: 100;
+  box-sizing: border-box;
+
+  &__brand {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #e6edf3; // matches $text-primary
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &__logout {
+    padding: 0.5rem 1rem;
+    background-color: transparent;
+    color: #e6edf3;
+    border: 1px solid #2a3348;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    &:hover {
+      background-color: rgba(255, 45, 120, 0.1); // using $accent
+      border-color: #ff2d78;
+      color: #ff2d78;
+    }
+  }
+}
