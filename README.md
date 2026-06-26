@@ -1,46 +1,344 @@
-# interview-ai
-# 🎯 AI-Powered Interview Assistant
+# 🚀 AI Interview Prep Platform
 
-An intelligent, full-stack web application designed to act as your personalized career coach. By analyzing your resume alongside a target Job Description, this system uses advanced AI (Google Gemini) to generate comprehensive interview preparation reports and dynamically create ATS-friendly tailored resumes.
+An AI-powered Interview Preparation Platform that helps users generate personalized interview strategies from a Job Description and Resume using Google's Gemini AI.
 
----
-
-## 🚀 Features
-
-- **Automated Resume Parsing:** Upload your PDF resume; the backend extracts and processes the text automatically.
-- **Intelligent Interview Prep Plan:** Generates a detailed report including:
-  - 📊 **Match Score:** Calculates how well your resume fits the target Job Description.
-  - ❓ **Custom Questions:** Predicts technical and behavioral questions specific to *your* profile and the *target* role, including the interviewer's intention and the ideal answer approach.
-  - 📉 **Skill Gap Analysis:** Identifies what you are missing and ranks severity.
-  - 📅 **Day-wise Prep Plan:** A structured, day-by-day roadmap to prepare for the interview.
-- **Tailored Resume Generation:** Automatically generates a fully formatted, ATS-friendly PDF resume tailored exactly to the target job description.
-- **Persistent Dashboard:** Secure user authentication allows you to track and manage all your past applications and reports in one place.
+Users can create an account, upload their resume, provide a job description, and receive a customized interview preparation plan with AI-generated insights.
 
 ---
 
-## 🛠️ Tech Stack
+## 🌐 Live Demo
 
 ### Frontend
-- **React.js (Vite)**: Lightning-fast development and optimized builds.
-- **React Router**: For seamless single-page application navigation.
-- **SCSS**: Advanced, modular styling.
-- **Axios**: Handling asynchronous API requests.
+https://ai-interview-prep-ten-tau.vercel.app
+
+### Backend API
+https://ai-interview-prep-chhk.onrender.com
+
+---
+
+# ✨ Features
+
+- 🔐 User Authentication (Register/Login/Logout)
+- 🍪 Secure JWT Authentication with HTTP-only Cookies
+- 📄 Resume Upload (PDF/DOCX)
+- 🤖 AI Interview Plan Generation
+- 💼 Job Description Analysis
+- 📊 Personalized Interview Strategy
+- 📱 Responsive UI
+- ☁️ Cloud Deployment
+- 🔒 Protected Routes
+- 🗄 MongoDB Database Integration
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- React.js
+- Vite
+- JavaScript (ES6+)
+- Axios
+- CSS
+
+## Backend
+
+- Node.js
+- Express.js
+- MongoDB
+- Mongoose
+- JWT Authentication
+- Cookie Parser
+- Multer
+- CORS
+
+## AI
+
+- Google Gemini API
+
+## Deployment
+
+- Frontend → Vercel
+- Backend → Render
+- Database → MongoDB Atlas
+
+---
+
+# 📂 Project Structure
+
+```
+AI-Interview-Prep/
+│
+├── Frontend/
+│   ├── src/
+│   ├── public/
+│   ├── package.json
+│   └── vite.config.js
+│
+├── Backend/
+│   ├── src/
+│   │   ├── config/
+│   │   ├── controllers/
+│   │   ├── middlewares/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   └── services/
+│   │
+│   ├── server.js
+│   ├── package.json
+│   └── .env
+│
+└── README.md
+```
+
+---
+
+# ⚙️ Installation
+
+## Clone Repository
+
+```bash
+git clone https://github.com/hariomjaiswal12/AI-Interview-Prep.git
+
+cd AI-Interview-Prep
+```
+
+---
+
+# Backend Setup
+
+```bash
+cd Backend
+
+npm install
+
+npm run dev
+```
+
+Backend runs on:
+
+```
+http://localhost:3000
+```
+
+---
+
+# Frontend Setup
+
+```bash
+cd Frontend
+
+npm install
+
+npm run dev
+```
+
+Frontend runs on:
+
+```
+http://localhost:5173
+```
+
+---
+
+# 🔑 Environment Variables
+
+## Backend (.env)
+
+```env
+MONGO_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_jwt_secret
+
+GOOGLE_GENAI_API_KEY=your_google_gemini_api_key
+```
+
+---
+
+## Frontend (.env)
+
+```env
+VITE_API_URL=http://localhost:3000
+```
+
+For Production
+
+```env
+VITE_API_URL=https://your-render-backend-url.onrender.com
+```
+
+---
+
+# 🔄 Workflow
+
+```
+User Registration
+        │
+        ▼
+User Login
+        │
+        ▼
+JWT Authentication
+        │
+        ▼
+Upload Resume
+        │
+        ▼
+Enter Job Description
+        │
+        ▼
+Gemini AI Analysis
+        │
+        ▼
+Personalized Interview Plan
+```
+
+---
+
+# 📸 Screenshots
+
+## Login
+
+_Add Screenshot_
+
+---
+
+## Register
+
+_Add Screenshot_
+
+---
+
+## Dashboard
+
+_Add Screenshot_
+
+---
+
+## Generated Interview Strategy
+
+_Add Screenshot_
+
+---
+
+# 🔐 Authentication
+
+This project uses:
+
+- JWT Authentication
+- HTTP-only Cookies
+- Protected Routes
+- Password Hashing (bcrypt)
+
+---
+
+# 🌍 Deployment
+
+### Frontend
+
+Hosted on **Vercel**
 
 ### Backend
-- **Node.js & Express.js**: Robust and scalable server infrastructure.
-- **MongoDB & Mongoose**: NoSQL database perfect for storing complex, nested AI-generated JSON documents.
-- **Multer**: Middleware for handling in-memory `multipart/form-data` (PDF uploads).
-- **PDF-Parse**: Extracting raw text from uploaded PDF buffers.
-- **Puppeteer**: Headless browser automation to perfectly render AI-generated HTML into downloadable PDFs.
-- **JWT & Bcryptjs**: Secure authentication and password hashing.
 
-### AI Integration
-- **Google Gemini SDK (`gemini-2.5-flash`)**: Powering the core analysis and generation logic.
-- **Zod**: Enforcing strict JSON schemas on the AI output to prevent hallucinations and guarantee frontend stability.
+Hosted on **Render**
 
-## 💡 Architecture Highlight: How It Works
-1. **Input:** Client uploads a Resume (PDF) and enters a Job Description.
-2. **Parsing:** Backend `multer` stores the PDF in RAM, `pdf-parse` extracts the text.
-3. **AI Evaluation:** Backend sends the context to Gemini, strictly requesting output via a `Zod` JSON Schema.
-4. **Data Presentation:** The highly-structured JSON response is saved to MongoDB and returned to the React frontend for visual rendering.
-5. **PDF Engine:** If a tailored resume is requested, Gemini generates raw HTML. Node.js spins up `Puppeteer`, applies A4 sizing and exact margins, captures the render as a PDF buffer, and streams it down to the user for download.
+### Database
+
+Hosted on **MongoDB Atlas**
+
+---
+
+# 📌 Future Improvements
+
+- ✅ Interview History
+- ✅ AI Mock Interview
+- ✅ Voice Interview
+- ✅ Resume Scoring
+- ✅ ATS Resume Analysis
+- ✅ Interview Progress Tracking
+- ✅ Dark/Light Theme
+- ✅ Email Verification
+- ✅ Forgot Password
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome!
+
+1. Fork the repository
+
+2. Create a new branch
+
+```bash
+git checkout -b feature-name
+```
+
+3. Commit changes
+
+```bash
+git commit -m "Added new feature"
+```
+
+4. Push
+
+```bash
+git push origin feature-name
+```
+
+5. Create a Pull Request
+
+---
+
+# 👨‍💻 Author
+
+**Hariom Jaiswal**
+
+B.Tech CSE Student
+
+MERN Stack Developer
+
+📧 Email: your-email@example.com
+
+💼 LinkedIn:
+https://linkedin.com/in/your-profile
+
+🐙 GitHub:
+https://github.com/hariomjaiswal12
+
+---
+
+# ⭐ Support
+
+If you like this project,
+
+⭐ Star this repository
+
+🍴 Fork it
+
+📢 Share it with others
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+```
+
+---
+
+## 🔥 To make it look even more professional
+
+Add these badges at the very top:
+
+```md
+![React](https://img.shields.io/badge/React-19-blue?logo=react)
+![NodeJS](https://img.shields.io/badge/Node.js-Express-green?logo=node.js)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-brightgreen?logo=mongodb)
+![Vercel](https://img.shields.io/badge/Frontend-Vercel-black?logo=vercel)
+![Render](https://img.shields.io/badge/Backend-Render-46E3B7?logo=render)
+![License](https://img.shields.io/badge/License-MIT-blue)
+```
+
+This style is suitable for showcasing in your portfolio and during internship or placement applications.
