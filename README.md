@@ -1,89 +1,74 @@
-# 🚀 AI Interview Prep Platform
+# 🚀 AI Interview Prep
 
-An AI-powered Interview Preparation Platform that helps users generate personalized interview strategies from a Job Description and Resume using Google's Gemini AI.
+![React](https://img.shields.io/badge/React-19-61DAFB?logo=react)
+![Node.js](https://img.shields.io/badge/Node.js-Express-339933?logo=node.js)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?logo=mongodb)
+![Vercel](https://img.shields.io/badge/Frontend-Vercel-black?logo=vercel)
+![Render](https://img.shields.io/badge/Backend-Render-46E3B7?logo=render)
+![License](https://img.shields.io/badge/License-MIT-blue)
 
-Users can create an account, upload their resume, provide a job description, and receive a customized interview preparation plan with AI-generated insights.
+An AI-powered MERN Stack application that generates personalized interview preparation strategies from a job description and resume using **Google Gemini AI**.
 
 ---
 
 ## 🌐 Live Demo
 
-### Frontend
-https://ai-interview-prep-ten-tau.vercel.app
-
-### Backend API
-https://ai-interview-prep-chhk.onrender.com
+- **Frontend:** https://ai-interview-prep-ten-tau.vercel.app
+- **Backend API:** https://ai-interview-prep-chhk.onrender.com
 
 ---
 
-# ✨ Features
+## ✨ Features
 
-- 🔐 User Authentication (Register/Login/Logout)
-- 🍪 Secure JWT Authentication with HTTP-only Cookies
+- 🔐 Secure JWT Authentication
+- 🤖 AI Interview Strategy Generation
 - 📄 Resume Upload (PDF/DOCX)
-- 🤖 AI Interview Plan Generation
 - 💼 Job Description Analysis
-- 📊 Personalized Interview Strategy
-- 📱 Responsive UI
+- 📊 Personalized Interview Plan
 - ☁️ Cloud Deployment
-- 🔒 Protected Routes
-- 🗄 MongoDB Database Integration
+- 📱 Responsive Design
 
 ---
 
-# 🛠 Tech Stack
+## 🛠 Tech Stack
 
-## Frontend
-
+### Frontend
 - React.js
 - Vite
-- JavaScript (ES6+)
 - Axios
 - CSS
 
-## Backend
-
+### Backend
 - Node.js
 - Express.js
-- MongoDB
+- MongoDB Atlas
 - Mongoose
 - JWT Authentication
-- Cookie Parser
 - Multer
+- Cookie Parser
 - CORS
 
-## AI
-
+### AI
 - Google Gemini API
 
-## Deployment
-
-- Frontend → Vercel
-- Backend → Render
-- Database → MongoDB Atlas
+### Deployment
+- Vercel
+- Render
 
 ---
 
-# 📂 Project Structure
+## 📂 Project Structure
 
-```
-AI-Interview-Prep/
+```text
+AI-Interview-Prep
 │
-├── Frontend/
-│   ├── src/
-│   ├── public/
-│   ├── package.json
-│   └── vite.config.js
+├── Frontend
+│   ├── src
+│   ├── public
+│   └── package.json
 │
-├── Backend/
-│   ├── src/
-│   │   ├── config/
-│   │   ├── controllers/
-│   │   ├── middlewares/
-│   │   ├── models/
-│   │   ├── routes/
-│   │   └── services/
-│   │
+├── Backend
+│   ├── src
 │   ├── server.js
 │   ├── package.json
 │   └── .env
@@ -93,47 +78,38 @@ AI-Interview-Prep/
 
 ---
 
-# ⚙️ Installation
+## ⚙️ Installation
 
-## Clone Repository
+### Clone Repository
 
 ```bash
 git clone https://github.com/hariomjaiswal12/AI-Interview-Prep.git
-
 cd AI-Interview-Prep
 ```
 
----
-
-# Backend Setup
+### Backend
 
 ```bash
 cd Backend
-
 npm install
-
 npm run dev
 ```
 
-Backend runs on:
+Runs on:
 
 ```
 http://localhost:3000
 ```
 
----
-
-# Frontend Setup
+### Frontend
 
 ```bash
 cd Frontend
-
 npm install
-
 npm run dev
 ```
 
-Frontend runs on:
+Runs on:
 
 ```
 http://localhost:5173
@@ -141,21 +117,17 @@ http://localhost:5173
 
 ---
 
-# 🔑 Environment Variables
+## 🔑 Environment Variables
 
-## Backend (.env)
+### Backend (.env)
 
 ```env
 MONGO_URI=your_mongodb_connection_string
-
 JWT_SECRET=your_jwt_secret
-
-GOOGLE_GENAI_API_KEY=your_google_gemini_api_key
+GOOGLE_GENAI_API_KEY=your_gemini_api_key
 ```
 
----
-
-## Frontend (.env)
+### Frontend (.env)
 
 ```env
 VITE_API_URL=http://localhost:3000
@@ -169,61 +141,23 @@ VITE_API_URL=https://your-render-backend-url.onrender.com
 
 ---
 
-# 🔄 Workflow
+## 📸 Screenshots
 
-```
-User Registration
-        │
-        ▼
-User Login
-        │
-        ▼
-JWT Authentication
-        │
-        ▼
-Upload Resume
-        │
-        ▼
-Enter Job Description
-        │
-        ▼
-Gemini AI Analysis
-        │
-        ▼
-Personalized Interview Plan
-```
+### Login
+
+<img width="100%" src="screenshots/login.png">
+
+### Dashboard
+
+<img width="100%" src="screenshots/dashboard.png">
+
+### AI Interview Strategy
+
+<img width="100%" src="screenshots/result.png">
 
 ---
 
-# 📸 Screenshots
-
-## Login
-
-_Add Screenshot_
-
----
-
-## Register
-
-_Add Screenshot_
-
----
-
-## Dashboard
-
-_Add Screenshot_
-
----
-
-## Generated Interview Strategy
-
-_Add Screenshot_
-
----
-
-# 🔐 Authentication
-
-This project uses:
+## 🔒 Authentication
 
 - JWT Authentication
 - HTTP-only Cookies
@@ -232,113 +166,32 @@ This project uses:
 
 ---
 
-# 🌍 Deployment
+## 🚀 Deployment
 
-### Frontend
-
-Hosted on **Vercel**
-
-### Backend
-
-Hosted on **Render**
-
-### Database
-
-Hosted on **MongoDB Atlas**
+| Service | Platform |
+|---------|----------|
+| Frontend | Vercel |
+| Backend | Render |
+| Database | MongoDB Atlas |
 
 ---
 
-# 📌 Future Improvements
-
-- ✅ Interview History
-- ✅ AI Mock Interview
-- ✅ Voice Interview
-- ✅ Resume Scoring
-- ✅ ATS Resume Analysis
-- ✅ Interview Progress Tracking
-- ✅ Dark/Light Theme
-- ✅ Email Verification
-- ✅ Forgot Password
-
----
-
-# 🤝 Contributing
-
-Contributions are welcome!
-
-1. Fork the repository
-
-2. Create a new branch
-
-```bash
-git checkout -b feature-name
-```
-
-3. Commit changes
-
-```bash
-git commit -m "Added new feature"
-```
-
-4. Push
-
-```bash
-git push origin feature-name
-```
-
-5. Create a Pull Request
-
----
-
-# 👨‍💻 Author
+## 👨‍💻 Author
 
 **Hariom Jaiswal**
 
-B.Tech CSE Student
-
-MERN Stack Developer
-
-📧 Email: your-email@example.com
-
-💼 LinkedIn:
-https://linkedin.com/in/your-profile
-
-🐙 GitHub:
-https://github.com/hariomjaiswal12
+- 💻 GitHub: https://github.com/hariomjaiswal12
+- 💼 LinkedIn: https://linkedin.com/in/your-linkedin
+- 📧 Email: your-email@example.com
 
 ---
 
-# ⭐ Support
+## ⭐ Support
 
-If you like this project,
-
-⭐ Star this repository
-
-🍴 Fork it
-
-📢 Share it with others
+If you found this project helpful, please consider giving it a ⭐ on GitHub.
 
 ---
 
-# 📄 License
+## 📄 License
 
-This project is licensed under the MIT License.
-
-```
-
----
-
-## 🔥 To make it look even more professional
-
-Add these badges at the very top:
-
-```md
-![React](https://img.shields.io/badge/React-19-blue?logo=react)
-![NodeJS](https://img.shields.io/badge/Node.js-Express-green?logo=node.js)
-![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-brightgreen?logo=mongodb)
-![Vercel](https://img.shields.io/badge/Frontend-Vercel-black?logo=vercel)
-![Render](https://img.shields.io/badge/Backend-Render-46E3B7?logo=render)
-![License](https://img.shields.io/badge/License-MIT-blue)
-```
-
-This style is suitable for showcasing in your portfolio and during internship or placement applications.
+This project is licensed under the **MIT License**.
