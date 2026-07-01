@@ -10,11 +10,34 @@ html,
 body,
 #root {
     width: 100%;
-    background-color: #161616;
-    color: whitesmoke;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    min-height: 100vh;
+    background-color: #0b0d13;
+    color: #f1f3f9;
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
 }
 
-.highlight{
-    color: #d20d3b;
+/* Beautiful custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0b0d13;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1f2330;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2b3042;
+}
+
+.highlight {
+    background: linear-gradient(135deg, #ff2d78 0%, #a855f7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }

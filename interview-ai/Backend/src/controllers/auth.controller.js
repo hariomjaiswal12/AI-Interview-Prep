@@ -3,6 +3,19 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const tokenBlacklistModel = require("../models/blacklist.model");
 
+const isProd = process.env.NODE_ENV === "production";
+const getCookieOptions = () => ({
+    httpOnly: true,
+    secure: isProd,
+    sameSite: isProd ? "none" : "lax",
+    maxAge: 24 * 60 * 60 * 1000
+});
+const getClearCookieOptions = () => ({
+    httpOnly: true,
+    secure: isProd,
+    sameSite: isProd ? "none" : "lax"
+});
+
 /**
  * Register User
  */
@@ -46,15 +59,11 @@ async function registerUserController(req, res) {
             }
         );
 
-        res.cookie("token", token, {
-            httpOnly: true,
-            secure: false,
-            sameSite: "lax",
-            maxAge: 24 * 60 * 60 * 1000
-        });
+        res.cookie("token", token, getCookieOptions());
 
         return res.status(201).json({
             message: "User registered successfully",
+            token,
             user: {
                 id: user._id,
                 username: user.username,
@@ -110,15 +119,11 @@ async function loginUserController(req, res) {
             }
         );
 
-        res.cookie("token", token, {
-            httpOnly: true,
-            secure: false,
-            sameSite: "lax",
-            maxAge: 24 * 60 * 60 * 1000
-        });
+        res.cookie("token", token, getCookieOptions());
 
         return res.status(200).json({
             message: "User logged in successfully",
+            token,
             user: {
                 id: user._id,
                 username: user.username,
@@ -139,17 +144,13 @@ async function loginUserController(req, res) {
  */
 async function logoutUserController(req, res) {
     try {
-        const token = req.cookies.token;
+        const token = req.cookies.token || req.headers.authorization?.split(" ")[1] || req.headers['authorization'];
 
         if (token) {
             await tokenBlacklistModel.create({ token });
         }
 
-        res.clearCookie("token", {
-            httpOnly: true,
-            secure: false,
-            sameSite: "lax"
-        });
+        res.clearCookie("token", getClearCookieOptions());
 
         return res.status(200).json({
             message: "User logged out successfully"
